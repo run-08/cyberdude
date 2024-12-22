@@ -2,7 +2,7 @@
 
 providing a movie api
 
-## Important Commands
+### Important Commands
 
 1. `npm install`
 2. `npm run server`
