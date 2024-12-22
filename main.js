@@ -1,4 +1,5 @@
-const express = require("express");
+import express from "express";
+import router from "./router/movies.router.js";
 const app = express();
 const port = 8080;
 
@@ -9,18 +10,7 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`The Server is Running On The Port ${port}`);
 });
-
-// Getting The Request
-app.get("/movies", () => {});
-
-//Getting The Request and Giving The Body or Response
-app.post("/movies", () => {});
-
-// Getting The Request for Updating
-app.put("/movies/:id", () => {});
-
-//Getting The Request for Deleting
-app.delete("/movies/:id", () => {});
+app.use("/movies", router);
 
 //  Use DRY principle => D-> Don't , R -> Repeat , Y -> Yourself (Don't Repeat Yourself)
 //  use KISS principle => K -> Keep , I -> it , S -> Simple , S -> Stupid (Keep it Simple , Stupid)
